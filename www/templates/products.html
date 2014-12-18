@@ -1,0 +1,30 @@
+<ion-view title="Available Products">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" >
+    
+  <div class="list" scroll="true">
+    <label class="item item-input">
+    <span class="input-label">Filter</span>
+    <input type="text" ng-model="test">
+    </label>
+    <div class="card" ng-repeat="product in products | filter:test ">
+      <div class="item item-divider">
+        {{product.product_name}} ---- Product ID: {{product.product_id}}
+      </div>
+      <div class="item item-text-wrap">
+        
+          <p>{{product.colors}}</p>
+        
+      </div>
+      <div class="item item-divider">
+        Brand ID: {{product.brand_id}} ---- SKU ID: {{product.sku}}
+      </div>
+    </div>
+
+
+  </div>
+
+  </ion-content>
+</ion-view>

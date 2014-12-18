@@ -1,0 +1,42 @@
+<ion-view title="Avialable Products, Colors, Sizes">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header" >
+    
+  <label class="item item-input">
+    <span class="input-label">Filter</span>
+    <input type="text" ng-model="test">
+    </label>
+  <div class="list" scroll="true">
+
+
+  <div class="item item-divider">
+    listbrands
+  </div>
+
+  <a class="item" href="" ng-repeat="brand in brands | filter:test">
+    Brand ID: {{brand.brand_id}} ---- {{brand.brand_name}}
+  </a>
+
+   <div class="item item-divider">
+    listcolors
+  </div>
+
+  <a class="item" href="" ng-repeat="color in colors | filter:test">
+    Color ID: {{color.color_id}} ---- {{color.color_name}} <b style = 'background-color:#{{color.color_code}}; color:#fff;'>#{{color.color_code}}</b>
+  </a>
+
+  <div class="item item-divider">
+    listsizes
+  </div>
+
+  <a class="item" href="" ng-repeat="size in sizes | filter:test ">
+    Size ID: {{size.size_id}} ---- {{size.size_name}} ---- <b>{{size.size_group}}</b>
+  </a>
+
+
+  </div>
+
+  </ion-content>
+</ion-view>
